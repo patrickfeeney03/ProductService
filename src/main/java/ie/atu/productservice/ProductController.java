@@ -11,7 +11,7 @@ public class ProductController {
     @PostMapping("/add-product")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Object addProduct(@RequestBody Product product) {
-        return "This is working";
+        return product;
     }
 
 

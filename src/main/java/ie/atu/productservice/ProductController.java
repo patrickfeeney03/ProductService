@@ -14,10 +14,10 @@ public class ProductController {
         return "This is working";
     }
 
-    /*
+
     @PostMapping("/get-product-by-id")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Object getProductById(@RequestBody
-
-     */
+    public Object getProductById(@RequestBody Warehouse warehouse) {
+        return warehouse;
+    }
 }

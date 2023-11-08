@@ -13,4 +13,11 @@ public class ProductController {
     public Object addProduct(@RequestBody Product product) {
         return "This is working";
     }
+
+    /*
+    @PostMapping("/get-product-by-id")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Object getProductById(@RequestBody
+
+     */
 }

@@ -16,9 +16,12 @@ public class ProductController {
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Object addProduct(@RequestBody Product product) {
-        System.out.println("HERE");
-        System.out.println(productService.addProduct(product));
-        return productService.addProduct(product);
+        if (productService.getWarehouse(product.getWarehouseId()).getCapacity() != 0) {
+            productService.addProduct(product);
+            return productService.getWarehouse(product.getWarehouseId());
+        } else {
+            return "No space available to add product.";
+        }
     }
 
     @GetMapping("/get-product/{id}")

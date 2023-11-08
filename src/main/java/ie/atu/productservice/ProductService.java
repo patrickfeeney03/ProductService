@@ -11,9 +11,6 @@ public interface ProductService {
     @GetMapping("/get-product-by-id/{id}")
     Object getProductById(@PathVariable String id);
 
-    @PostMapping("/add-warehouse")
-    void addWarehouse(@RequestBody Warehouse warehouse);
-
     @GetMapping("/get-warehouse/{id}")
     Warehouse getWarehouse(@PathVariable int id);
 }

@@ -16,7 +16,8 @@ public class ProductController {
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Object addProduct(@RequestBody Product product) {
-        if (productService.getWarehouse(product.getWarehouseId()).getCapacity() != 0) {
+        if (productService.getWarehouse(product.getWarehouseId()).getCapacity() != 0 &&
+        productService.getWarehouse(product.getWarehouseId()).getCapacity() > product.getQuantity()) {
             productService.addProduct(product);
             return productService.getWarehouse(product.getWarehouseId());
         } else {
